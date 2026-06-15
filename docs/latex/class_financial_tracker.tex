@@ -1,0 +1,204 @@
+\doxysection{Financial\+Tracker Class Reference}
+\hypertarget{class_financial_tracker}{}\label{class_financial_tracker}\index{FinancialTracker@{FinancialTracker}}
+
+
+Manages personal finance tracking including budget and expenses.  
+
+
+
+
+{\ttfamily \#include $<$Financial\+Tracker.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_financial_tracker_a557c7db477e52ad809485b8a975dc863}{Financial\+Tracker}} (const std\+::string \&data\+File="{}financial\+\_\+data.\+json"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_financial_tracker}{Financial\+Tracker} with the given data file path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_financial_tracker_a59f0527799d989579a0f44e0e485d686}{set\+Budget}} (double budget)
+\begin{DoxyCompactList}\small\item\em Sets the user\textquotesingle{}s monthly budget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_financial_tracker_aca97f1f8ff79d965f3dcac272c8badf7}{add\+Expense}} (double amount, const std\+::string \&category, const std\+::string \&date="{}"{})
+\begin{DoxyCompactList}\small\item\em Adds a new expense record. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_financial_tracker_a6d2591a73d5f5ea23f484d61fd8d0be1}{get\+Total\+Spent}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the total amount spent across all expenses. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{class_financial_tracker_ad1a498f4884054e1a068643b7d702bb7}{get\+Category\+Stats}} () const
+\begin{DoxyCompactList}\small\item\em Returns spending totals grouped by category. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_period_stats}{Period\+Stats}} \mbox{\hyperlink{class_financial_tracker_aebe0c2b418ced9df306f6960ef7aa763}{get\+Period\+Stats}} (const std\+::string \&start\+Date, const std\+::string \&end\+Date) const
+\begin{DoxyCompactList}\small\item\em Returns spending statistics for a given date range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_financial_summary}{Financial\+Summary}} \mbox{\hyperlink{class_financial_tracker_a6eb60540ad63bdbbb99ca0de70456fcd}{get\+Financial\+Summary}} () const
+\begin{DoxyCompactList}\small\item\em Returns a complete financial summary. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_expense}{Expense}} $>$ \& \mbox{\hyperlink{class_financial_tracker_ac5cef5bdf8a12d49827efeda1b742c0a}{get\+Expenses}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current list of all expenses. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_financial_tracker_a8069ed0cf097aa36199064123ebad760}{get\+Budget}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current budget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages personal finance tracking including budget and expenses. 
+
+Provides functionality to set a budget, record expenses by category, and generate various financial statistics. All data is persisted to a JSON-\/like plain-\/text file. 
+
+\label{doc-constructors}
+\Hypertarget{class_financial_tracker_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_financial_tracker_a557c7db477e52ad809485b8a975dc863}\index{FinancialTracker@{FinancialTracker}!FinancialTracker@{FinancialTracker}}
+\index{FinancialTracker@{FinancialTracker}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{FinancialTracker()}{FinancialTracker()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_a557c7db477e52ad809485b8a975dc863} 
+Financial\+Tracker\+::\+Financial\+Tracker (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data\+File}{ = {\ttfamily "{}financial\+\_\+data.json"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_financial_tracker}{Financial\+Tracker} with the given data file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+File} & Path to the file used for persisting data. Defaults to "{}financial\+\_\+data.\+json"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_financial_tracker_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_financial_tracker_aca97f1f8ff79d965f3dcac272c8badf7}\index{FinancialTracker@{FinancialTracker}!addExpense@{addExpense}}
+\index{addExpense@{addExpense}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{addExpense()}{addExpense()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_aca97f1f8ff79d965f3dcac272c8badf7} 
+void Financial\+Tracker\+::add\+Expense (\begin{DoxyParamCaption}\item[{double}]{amount}{, }\item[{const std\+::string \&}]{category}{, }\item[{const std\+::string \&}]{date}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Adds a new expense record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The expense amount. Must be positive. \\
+\hline
+{\em category} & The expense category. Must not be empty. \\
+\hline
+{\em date} & The date in YYYY-\/\+MM-\/\+DD format. Defaults to today if empty. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if amount is not positive or category is empty. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if the date format is invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_financial_tracker_a8069ed0cf097aa36199064123ebad760}\index{FinancialTracker@{FinancialTracker}!getBudget@{getBudget}}
+\index{getBudget@{getBudget}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{getBudget()}{getBudget()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_a8069ed0cf097aa36199064123ebad760} 
+double Financial\+Tracker\+::get\+Budget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the current budget. 
+
+\begin{DoxyReturn}{Returns}
+The budget value as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_financial_tracker_ad1a498f4884054e1a068643b7d702bb7}\index{FinancialTracker@{FinancialTracker}!getCategoryStats@{getCategoryStats}}
+\index{getCategoryStats@{getCategoryStats}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{getCategoryStats()}{getCategoryStats()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_ad1a498f4884054e1a068643b7d702bb7} 
+std\+::map$<$ std\+::string, double $>$ Financial\+Tracker\+::get\+Category\+Stats (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns spending totals grouped by category. 
+
+\begin{DoxyReturn}{Returns}
+A map from category name to total amount spent in that category. 
+\end{DoxyReturn}
+\Hypertarget{class_financial_tracker_ac5cef5bdf8a12d49827efeda1b742c0a}\index{FinancialTracker@{FinancialTracker}!getExpenses@{getExpenses}}
+\index{getExpenses@{getExpenses}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{getExpenses()}{getExpenses()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_ac5cef5bdf8a12d49827efeda1b742c0a} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_expense}{Expense}} $>$ \& Financial\+Tracker\+::get\+Expenses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the current list of all expenses. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the vector of \doxylink{struct_expense}{Expense} records. 
+\end{DoxyReturn}
+\Hypertarget{class_financial_tracker_a6eb60540ad63bdbbb99ca0de70456fcd}\index{FinancialTracker@{FinancialTracker}!getFinancialSummary@{getFinancialSummary}}
+\index{getFinancialSummary@{getFinancialSummary}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{getFinancialSummary()}{getFinancialSummary()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_a6eb60540ad63bdbbb99ca0de70456fcd} 
+\mbox{\hyperlink{struct_financial_summary}{Financial\+Summary}} Financial\+Tracker\+::get\+Financial\+Summary (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a complete financial summary. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_financial_summary}{Financial\+Summary} struct with budget, total spent, and remaining. 
+\end{DoxyReturn}
+\Hypertarget{class_financial_tracker_aebe0c2b418ced9df306f6960ef7aa763}\index{FinancialTracker@{FinancialTracker}!getPeriodStats@{getPeriodStats}}
+\index{getPeriodStats@{getPeriodStats}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{getPeriodStats()}{getPeriodStats()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_aebe0c2b418ced9df306f6960ef7aa763} 
+\mbox{\hyperlink{struct_period_stats}{Period\+Stats}} Financial\+Tracker\+::get\+Period\+Stats (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+Date}{, }\item[{const std\+::string \&}]{end\+Date}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns spending statistics for a given date range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & Start of the period in YYYY-\/\+MM-\/\+DD format. \\
+\hline
+{\em end\+Date} & End of the period in YYYY-\/\+MM-\/\+DD format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_period_stats}{Period\+Stats} struct with total spent and expense count. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the date format is invalid or start is after end. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_financial_tracker_a6d2591a73d5f5ea23f484d61fd8d0be1}\index{FinancialTracker@{FinancialTracker}!getTotalSpent@{getTotalSpent}}
+\index{getTotalSpent@{getTotalSpent}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{getTotalSpent()}{getTotalSpent()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_a6d2591a73d5f5ea23f484d61fd8d0be1} 
+double Financial\+Tracker\+::get\+Total\+Spent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Calculates the total amount spent across all expenses. 
+
+\begin{DoxyReturn}{Returns}
+Total amount spent as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_financial_tracker_a59f0527799d989579a0f44e0e485d686}\index{FinancialTracker@{FinancialTracker}!setBudget@{setBudget}}
+\index{setBudget@{setBudget}!FinancialTracker@{FinancialTracker}}
+\doxysubsubsection{\texorpdfstring{setBudget()}{setBudget()}}
+{\footnotesize\ttfamily \label{class_financial_tracker_a59f0527799d989579a0f44e0e485d686} 
+void Financial\+Tracker\+::set\+Budget (\begin{DoxyParamCaption}\item[{double}]{budget}{}\end{DoxyParamCaption})}
+
+
+
+Sets the user\textquotesingle{}s monthly budget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The budget amount. Must be non-\/negative. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if budget is negative. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Financial\+Tracker.\+h\item 
+src/Financial\+Tracker.\+cpp\end{DoxyCompactItemize}
