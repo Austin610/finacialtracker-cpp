@@ -1,0 +1,51 @@
+\doxysection{src/financial\+\_\+tracker.cpp File Reference}
+\hypertarget{financial__tracker_8cpp}{}\label{financial__tracker_8cpp}\index{src/financial\_tracker.cpp@{src/financial\_tracker.cpp}}
+
+
+Implementation of financial tracking functions.  
+
+
+{\ttfamily \#include "{}financial\+\_\+tracker.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{financial__tracker_8cpp_a94d7e29d48faad46489817fbd4b36dd7}{validate\+Amount}} (const std\+::string \&amount\+Str, double \&amount)
+\begin{DoxyCompactList}\small\item\em Validate and parse amount string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of financial tracking functions. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{financial__tracker_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{financial__tracker_8cpp_a94d7e29d48faad46489817fbd4b36dd7}\index{financial\_tracker.cpp@{financial\_tracker.cpp}!validateAmount@{validateAmount}}
+\index{validateAmount@{validateAmount}!financial\_tracker.cpp@{financial\_tracker.cpp}}
+\doxysubsubsection{\texorpdfstring{validateAmount()}{validateAmount()}}
+{\footnotesize\ttfamily \label{financial__tracker_8cpp_a94d7e29d48faad46489817fbd4b36dd7} 
+bool validate\+Amount (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{amount\+Str}{, }\item[{double \&}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Validate and parse amount string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em amount\+Str} & Amount string to validate \\
+\hline
+\mbox{\texttt{out}}  & {\em amount} & Parsed amount if valid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if amount is valid and non-\/negative 
+\end{DoxyReturn}

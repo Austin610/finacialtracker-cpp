@@ -1,0 +1,56 @@
+\doxysection{financial\+\_\+tracker.\+h}
+\hypertarget{financial__tracker_8h_source}{}\label{financial__tracker_8h_source}\index{src/financial\_tracker.h@{src/financial\_tracker.h}}
+\mbox{\hyperlink{financial__tracker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ FINANCIAL\_TRACKER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ FINANCIAL\_TRACKER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_expense}{Expense}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_expense_ac4eca2b67898335e76bd306a4fcf0304}{amount}};\ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_expense_a12bd30704a94afc9583820c812abc089}{category}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_expense_ab4c135e479e2b12a649800d209c768e5}{date}};\ \ \ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_financial_tracker_a557c7db477e52ad809485b8a975dc863}{FinancialTracker}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_budget;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<Expense>\ m\_expenses;\ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ m\_dataFile;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ loadData();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ saveData()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_financial_tracker_a557c7db477e52ad809485b8a975dc863}{FinancialTracker}}(\textcolor{keyword}{const}\ std::string\&\ dataFile\ =\ \textcolor{stringliteral}{"{}financial\_data.json"{}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_financial_tracker_abfda07edd0b401159ef6e3c9c8055913}{setBudget}}(\textcolor{keywordtype}{double}\ budget);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_financial_tracker_a5f1f6a1cd85d8da12223e1a463a60324}{addExpense}}(\textcolor{keywordtype}{double}\ amount,\ \textcolor{keyword}{const}\ std::string\&\ category,\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ date\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_financial_tracker_a6d2591a73d5f5ea23f484d61fd8d0be1}{getTotalSpent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::map<std::string,\ double>\ \mbox{\hyperlink{class_financial_tracker_ad1a498f4884054e1a068643b7d702bb7}{getCategoryStats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ std::map<std::string,\ double>\ \mbox{\hyperlink{class_financial_tracker_a82ee6e4158416f3777938170b39d599c}{getPeriodStats}}(\textcolor{keyword}{const}\ std::string\&\ startDate,\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ endDate)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ std::map<std::string,\ double>\ \mbox{\hyperlink{class_financial_tracker_ac5e6de7472ab449a40de99bffbf733d7}{getFinancialSummary}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{class_financial_tracker_aa3b71c8615252e6a3acb73a1da077e26}{getCurrentDate}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_financial_tracker_a6066b3d7f7fade233bf09696df109c88}{isValidDate}}(\textcolor{keyword}{const}\ std::string\&\ date);}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{financial__tracker_8h_a94d7e29d48faad46489817fbd4b36dd7}{validateAmount}}(\textcolor{keyword}{const}\ std::string\&\ amountStr,\ \textcolor{keywordtype}{double}\&\ amount);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FINANCIAL\_TRACKER\_H}}
+
+\end{DoxyCode}

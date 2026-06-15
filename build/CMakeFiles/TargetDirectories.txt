@@ -1,0 +1,3 @@
+C:/Users/Neuton/Downloads/finacialtracker cpp/build/CMakeFiles/financial_tracker.dir
+C:/Users/Neuton/Downloads/finacialtracker cpp/build/CMakeFiles/edit_cache.dir
+C:/Users/Neuton/Downloads/finacialtracker cpp/build/CMakeFiles/rebuild_cache.dir
