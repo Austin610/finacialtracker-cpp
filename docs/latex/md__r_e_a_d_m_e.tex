@@ -148,16 +148,7 @@ Data is stored as plain JSON and is human-\/readable\+:
 
 
 \DoxyHorRuler{0}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{\texorpdfstring{API reference (for developers)}{API reference (for developers)}}\label{md__r_e_a_d_m_e_autotoc_md16}
-All public functions are documented with Doxygen comments in {\ttfamily \doxylink{_financial_tracker_8h_source}{include/\+Financial\+Tracker.\+h}}. To generate HTML docs\+:
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{doxygen\ -\/g\ \ \ \ \ \ \ \ \ \ \#\ generate\ Doxyfile}
-\DoxyCodeLine{doxygen\ Doxyfile\ \ \ \ \#\ outputs\ to\ docs/html/}
-
-\end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{\texorpdfstring{Key methods}{Key methods}}\label{md__r_e_a_d_m_e_autotoc_md17}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{\texorpdfstring{Key methods}{Key methods}}\label{md__r_e_a_d_m_e_autotoc_md16}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{class_financial_tracker}{FinancialTracker}}\ tracker(\textcolor{stringliteral}{"{}my\_data.json"{}});}
@@ -171,7 +162,7 @@ All public functions are documented with Doxygen comments in {\ttfamily \doxylin
 \DoxyCodeLine{\textcolor{keyword}{auto}\ \ \ sum\ \ \ =\ tracker.getFinancialSummary();\ \ \ \ \ \ \ \textcolor{comment}{//\ \{budget,\ totalSpent,\ remaining\}}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{\texorpdfstring{Free functions}{Free functions}}\label{md__r_e_a_d_m_e_autotoc_md18}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{\texorpdfstring{Free functions}{Free functions}}\label{md__r_e_a_d_m_e_autotoc_md17}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ validateDate(\textcolor{keyword}{const}\ std::string\ \&dateStr);\ \ \textcolor{comment}{//\ "{}2024-\/03-\/15"{}\ →\ true}}
@@ -179,7 +170,7 @@ All public functions are documented with Doxygen comments in {\ttfamily \doxylin
 \DoxyCodeLine{std::string\ trim(\textcolor{keyword}{const}\ std::string\ \&str);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ strips\ whitespace}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{Error handling}{Error handling}}\label{md__r_e_a_d_m_e_autotoc_md19}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{\texorpdfstring{Error handling}{Error handling}}\label{md__r_e_a_d_m_e_autotoc_md18}
 All errors are thrown as standard exceptions and must be caught by the caller\+:
 
 

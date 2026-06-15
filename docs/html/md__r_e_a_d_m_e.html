@@ -209,12 +209,7 @@ Data file format</h1>
 <div class="line">  ]</div>
 <div class="line">}</div>
 </div><!-- fragment --><hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-API reference (for developers)</h1>
-<p>All public functions are documented with Doxygen comments in <span class="tt"><a class="el" href="_financial_tracker_8h_source.html">include/FinancialTracker.h</a></span>. To generate HTML docs:</p>
-<div class="fragment"><div class="line">doxygen -g          # generate Doxyfile</div>
-<div class="line">doxygen Doxyfile    # outputs to docs/html/</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Key methods</h2>
 <div class="fragment"><div class="line"><a class="code hl_class" href="class_financial_tracker.html">FinancialTracker</a> tracker(<span class="stringliteral">&quot;my_data.json&quot;</span>);</div>
 <div class="line"> </div>
@@ -226,12 +221,12 @@ Key methods</h2>
 <div class="line"><span class="keyword">auto</span>   ps    = tracker.getPeriodStats(<span class="stringliteral">&quot;2024-01-01&quot;</span>, <span class="stringliteral">&quot;2024-03-31&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span>   sum   = tracker.getFinancialSummary();       <span class="comment">// {budget, totalSpent, remaining}</span></div>
 <div class="ttc" id="aclass_financial_tracker_html"><div class="ttname"><a href="class_financial_tracker.html">FinancialTracker</a></div><div class="ttdoc">Manages personal finance tracking including budget and expenses.</div><div class="ttdef"><b>Definition</b> FinancialTracker.h:52</div></div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Free functions</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">bool</span>        validateDate(<span class="keyword">const</span> std::string &amp;dateStr);  <span class="comment">// &quot;2024-03-15&quot; → true</span></div>
 <div class="line">std::string getTodayDate();                            <span class="comment">// → &quot;2024-03-22&quot;</span></div>
 <div class="line">std::string trim(<span class="keyword">const</span> std::string &amp;str);              <span class="comment">// strips whitespace</span></div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Error handling</h2>
 <p>All errors are thrown as standard exceptions and must be caught by the caller:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">try</span> {</div>

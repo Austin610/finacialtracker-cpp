@@ -34,11 +34,10 @@ var NAVTREE =
       ] ],
       [ "Usage walkthrough", "md__r_e_a_d_m_e.html#autotoc_md10", null ],
       [ "Project structure", "md__r_e_a_d_m_e.html#autotoc_md12", null ],
-      [ "Data file format", "md__r_e_a_d_m_e.html#autotoc_md14", null ],
-      [ "API reference (for developers)", "md__r_e_a_d_m_e.html#autotoc_md16", [
-        [ "Key methods", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
-        [ "Free functions", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
-        [ "Error handling", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
+      [ "Data file format", "md__r_e_a_d_m_e.html#autotoc_md14", [
+        [ "Key methods", "md__r_e_a_d_m_e.html#autotoc_md16", null ],
+        [ "Free functions", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
+        [ "Error handling", "md__r_e_a_d_m_e.html#autotoc_md18", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
