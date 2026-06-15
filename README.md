@@ -139,14 +139,7 @@ Data is stored as plain JSON and is human-readable:
 
 ---
 
-## API reference (for developers)
 
-All public functions are documented with Doxygen comments in `include/FinancialTracker.h`. To generate HTML docs:
-
-```bash
-doxygen -g          # generate Doxyfile
-doxygen Doxyfile    # outputs to docs/html/
-```
 
 ### Key methods
 

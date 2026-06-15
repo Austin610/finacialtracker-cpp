@@ -8,8 +8,13 @@
 #include <iomanip>
 #include <sstream>
 #include <stdexcept>
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
+/**
+ * @brief Adds an expense to the tracker.
+ *
+ * @param amount Expense value.
+ * @param category Expense category.
+ */
+void addExpense(double amount, std::string category);
 
 std::string trim(const std::string &str) {
   auto start = str.begin();
@@ -28,7 +33,7 @@ bool validateDate(const std::string &dateStr) {
     return false;
   }
 
-  // Check all other characters are digits
+  
   for (int i = 0; i < 10; ++i) {
     if (i == 4 || i == 7) {
       continue;
@@ -53,7 +58,7 @@ std::string getTodayDate() {
   return oss.str();
 }
 
-// ── Minimal JSON helpers ──────────────────────────────────────────────────────
+
 
 static std::string escapeJson(const std::string &s) {
   std::string out;
@@ -90,7 +95,7 @@ static std::string extractJsonValue(const std::string &json,
   return trim(json.substr(valStart, valEnd - valStart));
 }
 
-// ── FinancialTracker ─────────────────────────────────────────────────────────
+// FinancialTracker 
 
 FinancialTracker::FinancialTracker(const std::string &dataFile)
     : dataFile_(dataFile), budget_(0.0) {
